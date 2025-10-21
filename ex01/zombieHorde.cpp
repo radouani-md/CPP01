@@ -3,9 +3,9 @@
 
 Zombie* zombieHorde( int N, std::string name )
 {
+    if (N <= 0)
+        return NULL;
     Zombie *zombi = new Zombie[N];
-    if (!zombi)
-        std::cout << "Allocation Failed" << std::endl;
     for (int i = 0; i < N; ++i)
         zombi[i].setName(name);
     return (zombi);

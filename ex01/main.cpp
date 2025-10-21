@@ -2,9 +2,12 @@
 
 int main()
 {
+    int N = 3;
     Zombie *p;
-    p = zombieHorde(5, "mohammed");
-    for (int i = 0; i < 5; i++)
+    p = zombieHorde(N, "mohammed");
+    if (!p)
+        return 1;
+    for (int i = 0; i < N; i++)
     {
         std::cout << "zombie " << i + 1 << "-->"; 
         p[i].announce();
