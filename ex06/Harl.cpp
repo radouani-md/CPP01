@@ -20,10 +20,27 @@ void Harl::error( void )
 void Harl::complain( std::string level )
 {
     std::string words[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::*ptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    int value = 0;
     for (int i = 0; i < 4; i++)
     {
         if (level == words[i])
-            (this->*ptr[i])();
+            value = i + 1;
+    }
+    switch (value)
+    {
+        case 1:
+            this->debug();
+        
+        case 2:
+            this->info();
+        
+        case 3:
+            this->warning();
+
+        case 4:
+            this->error();
+
+        default:
+            break ;
     }
 }

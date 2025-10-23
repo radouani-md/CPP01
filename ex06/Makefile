@@ -1,10 +1,10 @@
-NAME = file
+NAME = harlFilter
 
 CFLAGS = -Wextra -Wall -Werror -std=c++98
 
 CC = c++
 
-SRC = main.cpp fileWork.cpp
+SRC = main.cpp Harl.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp fileWork.hpp
+%.o: %.cpp Harl.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
