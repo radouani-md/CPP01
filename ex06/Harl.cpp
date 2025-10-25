@@ -2,19 +2,19 @@
 
 void Harl::debug( void )
 {
-    std::cout << "[DEBUG] Debug Message" << std::endl;
+    std::cout << "[DEBUG]" << std::endl << "Debug Message" << std::endl;
 }
 void Harl::info( void )
 {
-    std::cout << "[INFO] Info Message" << std::endl;
+    std::cout << "[INFO]" << std::endl << "Info Message" << std::endl;
 }
 void Harl::warning( void )
 {
-    std::cout << "[WARNING] Warning Message" << std::endl;
+    std::cout << "[WARNING]" << std::endl << "Warning Message" << std::endl;
 }
 void Harl::error( void )
 {
-    std::cout << "[ERROR] Error Message" << std::endl;
+    std::cout << "[ERROR]" << std::endl << "Error Message" << std::endl;
 }
 
 void Harl::complain( std::string level )
@@ -41,6 +41,7 @@ void Harl::complain( std::string level )
             this->error();
 
         default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
             break ;
     }
 }
