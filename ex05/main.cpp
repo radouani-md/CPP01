@@ -9,4 +9,5 @@ int main()
     msg.complain("INFO");
     msg.complain("WARNING");
     msg.complain("DEBUG");
+
 }

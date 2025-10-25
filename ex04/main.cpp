@@ -3,9 +3,9 @@
 
 int main(int argc, char **argv)
 {
-    if (argc != 3)
+    if (argc < 4 || argc > 4)
     {
-        std::cout << "Need three Arguments please !!" << std::endl;
+        std::cout << "Need four Arguments please !!" << std::endl;
         return (1);
     }
 
