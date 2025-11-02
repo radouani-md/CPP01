@@ -4,7 +4,7 @@
 int    readAndReplace(char **argv)
 {
 	std::ifstream	file;
-	int          	indexPos;
+	int          	indexPos = 0;
 	std::string  	searched = argv[2];
 	std::string  	updated = argv[3];
 	std::ofstream	replacedFile;
@@ -18,13 +18,14 @@ int    readAndReplace(char **argv)
 		return (1);
 	}
 	std::getline(file, lines, '\0');
-	while (lines.find(searched) != std::string::npos)
+	while (lines.find(searched, indexPos) != std::string::npos)
 	{
 		oldLines = lines;
-		indexPos = lines.find(searched);
+		indexPos = lines.find(searched, indexPos);
 		lines = lines.substr(0, indexPos);
 		lines += updated;
 		lines += oldLines.substr(indexPos + searched.length() , oldLines.length());
+		indexPos += updated.length();
 	}
 
 	std::string rep = argv[1];

@@ -9,7 +9,7 @@ int main()
         return 1;
     for (int i = 0; i < N; i++)
     {
-        std::cout << "zombie " << i + 1 << "-->"; 
+        std::cout << "zombie " << i + 1 << "-->";
         p[i].announce();
     }
     delete [] p;

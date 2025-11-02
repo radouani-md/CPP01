@@ -16,5 +16,5 @@ class HumanA
         HumanA(std::string name, Weapon &wep);
 };
 
-
 #endif
+   
